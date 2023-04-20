@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          addTypenameExcludedPaths:
+            - subscription
+          clients:
+            - graphql
+          scalars:
+            uuid: 
+              type: String
+          generatedFileHeader: "// ignore_for_file: type=lint\n\n"
+          namingSeparator: ""
