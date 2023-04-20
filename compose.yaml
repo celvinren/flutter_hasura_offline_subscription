@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+  hasura:
+    build: hasura
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgres@postgres/postgres
+      HASURA_GRAPHQL_ENABLE_CONSOLE: true
+    ports:
+      - 8080:8080
