@@ -1,5 +1,19 @@
-Start hasura:
+Start up this project:
+prequisite: docker, hasura cli, graphqurl
+1. run 'docker compose up' in the root directory
+2. go into hasura directory and run 'hasura console'
+3. run 'cd app && dart pub run build_runner build --delete-conflicting-outputs && flutter pub get' to init app project
+4. debug the app.
+
+
+
+init hasura, if you are first time use hasura, run through the following step:
 1. install hasura cli
 2. install docker
 3. run 'docker compose up' in the root directory
 4. go into hasura directory and run 'hasura console'
+5. create database and tables from console, it will auto generate metadata and migrations
+
+6. 'npm install -g graphqurl' to install gq
+7. 'gq http://localhost:8080/v1/graphql --introspect > schema.graphql' to generate schema.graphql
+

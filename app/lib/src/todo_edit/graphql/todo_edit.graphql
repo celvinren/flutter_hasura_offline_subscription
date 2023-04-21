@@ -1,0 +1,16 @@
+fragment TodoEditTodo on todos {
+  id
+  name
+}
+
+query TodoEditGetTodo($id: uuid!) {
+  todos_by_pk(id: $id) {
+    ...TodoEditTodo
+  }
+}
+
+mutation TodoEditUpdateTodo($id: uuid!, $name: String) {
+  update_todos_by_pk(pk_columns: {id: $id}, _set: {name: $name}) {
+    ...TodoEditTodo
+  }
+}

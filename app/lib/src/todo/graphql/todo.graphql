@@ -1,0 +1,10 @@
+fragment TodoTodo on todos {
+  id
+  name
+}
+
+query TodoGetTodo($id: uuid!) {
+  todos_by_pk(id: $id) {
+    ...TodoTodo
+  }
+}

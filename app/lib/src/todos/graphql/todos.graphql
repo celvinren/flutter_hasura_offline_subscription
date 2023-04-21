@@ -1,0 +1,22 @@
+fragment TodosTodo on todos {
+  id
+  name
+}
+
+query TodosGetTodos {
+  todos {
+    ...TodosTodo
+  }
+}
+
+mutation TodosCreateTodo($name: String!, $id : uuid) {
+  insert_todos_one(object: {name: $name, id: $id}) {
+    ...TodosTodo
+  }
+}
+
+subscription TodosGetTodosSubscription {
+  todos {
+    ...TodosTodo
+  }
+}
