@@ -17,3 +17,6 @@ init hasura, if you are first time use hasura, run through the following step:
 6. 'npm install -g graphqurl' to install gq
 7. 'gq http://localhost:8080/v1/graphql --introspect > schema.graphql' to generate schema.graphql
 
+8. If this is the first time you are using hasura, you need to run the following commands to apply the metadata and migrations to the database:
+hasura migrate apply
+hasura metadata apply

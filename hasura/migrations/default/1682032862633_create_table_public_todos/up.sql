@@ -1,1 +1,2 @@
-CREATE TABLE "public"."todos" ("id" uuid NOT NULL, "name" text, PRIMARY KEY ("id") , UNIQUE ("id"));
+CREATE TABLE "public"."todos" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "name" text NOT NULL, PRIMARY KEY ("id") );
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
