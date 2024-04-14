@@ -5,10 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "app",
+            "name": "app_web",
             "cwd": "app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--dart-define=HASURA_URL=http://localhost:8080/v1/graphql"
+            ]
+        },
+        {
+            "name": "app_android",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=HASURA_URL=http://10.0.2.2:8080/v1/graphql"
+            ]
         },
         {
             "name": "app (profile mode)",
